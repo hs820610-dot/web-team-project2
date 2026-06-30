@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif; /* 깔끔한 고딕체 적용 */
+}
+
+body {
+    background-color: #f9f9f9; /* 부드러운 아이보리빛 배경 */
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* 헤더, 메인, 풋터를 세로로 정렬 */
+}
+
+/* 2. 헤더(Header) 스타일링 */
+header {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; /* 구성 요소들을 좌, 우, 가운데로 정렬 */
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
+}
+
+header h1 {
+    font-size: 24px;
+    color: #ff6b35; /* 맛집 사이트에 어울리는 포인트 오렌지 컬러 */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 검색창 스타일 */
+header input[type="text"] {
+    width: 350px;
+    padding: 10px 20px;
+    border: 2px solid #ff6b35;
+    border-radius: 25px; /* 둥근 검색창 */
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+header input[type="text"]:focus {
+    box-shadow: 0 0 8px rgba(255, 107, 53, 0.3); /* 검색창 클릭 시 빛나는 효과 */
+}
+
+/* 네비게이션 메뉴 스타일 */
+header nav a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 500;
+    margin-left: 25px;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: #ff6b35; /* 마우스 올렸을 때 주황색으로 변경 */
+}
+
+/* 3. 메인(Main) 스타일링 */
+main {
+    flex: 1; /* 상단 헤더와 하단 풋터를 제외한 남은 공간을 꽉 채움 */
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; /* 화면 가운데 정렬 */
+    padding: 40px 20px;
+}
+
+/* 4. 풋터(Footer) 스타일링 */
+footer {
+    background-color: #2b2d42; /* 차분한 네이비/다크그레이 톤 */
+    color: #adb5bd;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: auto; /* 본문 내용이 적어도 항상 화면 맨 아래에 위치 */
+}
+
+footer p:first-child {
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
