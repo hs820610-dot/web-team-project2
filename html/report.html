@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛집소개사이트 맛집 제보하기</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/report.css">
+    <script src="../js/report.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>맛집 로드</h1>
+        <input type="text" placeholder="맛집을 검색해 보세요~!">
+        <nav>
+            <a href="../html/home.html">홈</a>
+            <a href="../html/report.html">맛집 제보하기</a>
+            <a href="../html/guestbook.html">방명록</a>
+            <a href="../html/faq.html">FAQ</a>
+        </nav>
+    </header>
+    <main>
+        <h2 class="page-title">맛집 제보하기</h2>
+        <p class="page-desc">알고 있는 맛집을 다른 사람들에게 소개해 주세요!</p>
+
+        <form id="reportForm" class="report-form" novalidate>
+            <div class="form-group">
+                <label for="shopName">식당 이름 *</label>
+                <input type="text" id="shopName" name="shopName" placeholder="식당 이름을 입력해 주세요">
+            </div>
+            <div class="form-group">
+                <label for="category">카테고리</label>
+                <input type="text" id="category" name="category" placeholder="예) 한식, 일식, 카페">
+            </div>
+            <div class="form-group">
+                <label for="desc">한줄 소개</label>
+                <textarea id="desc" name="desc" rows="4" placeholder="이 맛집을 추천하는 이유를 알려주세요"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="link">참고 링크</label>
+                <input type="url" id="link" name="link" placeholder="네이버지도, 인스타그램 등 (선택)">
+            </div>
+            <button type="submit" class="submit-btn">제보하기</button>
+        </form>
+    </main>
+</body>
+<footer>
+    <p>(주)맛집 로드</p>
+    <p>copyright ⓒ 2026 FoodLoad</p>
+</footer>
+</html>

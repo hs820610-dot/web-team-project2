@@ -1,0 +1,56 @@
+/* =========================================
+   미니 방명록 스타일
+   ========================================= */
+
+.guestbook-write {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.guestbook-write input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid #dddddd;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.guestbook-write input:focus {
+    border-color: #ff6b35;
+}
+
+.guestbook-write button {
+    padding: 10px 24px;
+    background-color: #ff6b35;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.guestbook-write button:hover {
+    background-color: #e85a2a;
+}
+
+.guestbook-list {
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.guestbook-item {
+    background-color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    color: #333333;
+}

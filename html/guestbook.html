@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>맛집소개사이트 매인페이지</title>
+    <title>맛집소개사이트 미니 방명록</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/home.css">
-    <script src="../js/home.js" defer></script>
+    <link rel="stylesheet" href="../css/guestbook.css">
+    <script src="../js/guestbook.js" defer></script>
 </head>
 <body>
     <header>
@@ -17,20 +17,19 @@
             <a href="../html/report.html">맛집 제보하기</a>
             <a href="../html/guestbook.html">방명록</a>
             <a href="../html/faq.html">FAQ</a>
-            <a href="../html/guide.html">가이드/매거진</a>
-            <a href="../html/service.html">서비스 소개</a>
         </nav>
     </header>
     <main>
-        <h2 class="main-title">오늘의 추천 맛집</h2>
-        
-        <div class="card-container" id="cardContainer">
-            </div>
-        
-        <div class="no-result" id="noResult" style="display: none;">
-            검색 결과와 일치하는 맛집이 없습니다. 🥲
+        <h2 class="page-title">미니 방명록</h2>
+        <p class="page-desc">다녀온 맛집에 대한 한 줄 평을 남겨주세요!</p>
 
-    </main>    
+        <div class="guestbook-write">
+            <input type="text" id="guestInput" placeholder="한 줄 평을 입력해 주세요">
+            <button type="button" id="guestSubmit">등록</button>
+        </div>
+
+        <ul class="guestbook-list" id="guestList"></ul>
+    </main>
 </body>
 <footer>
     <p>(주)맛집 로드</p>
