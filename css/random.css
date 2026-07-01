@@ -1,0 +1,265 @@
+
+.bgDisplay {
+    border : 3px solid #ff6b35; /* 주황색 테두리 */
+    border-radius: 20px; /* 둥근 테두리 */
+    height: 1000px; /* 높이 지정 */
+    width: 700px; /* 너비 지정 */
+    margin: 0 auto; /* 가운데 정렬 */
+
+    background: linear-gradient(to bottom, #fff5e6, #ffe6cc); /* 상단에서 하단으로 색상 그라데이션 */
+}
+
+.chatbotMain {
+    max-width: 900px;         
+    margin: 50px auto;      
+    padding: 0 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.chatbotMain h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2.2rem;     
+    margin-bottom: 25px;
+    border: 3px solid #5f5f5f;
+    border-radius: 12px;
+    background-color: #fffd90;
+}
+
+
+.chatBotDisplay {
+    background-color: #f7dc48; 
+    border-radius: 16px;       
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;          
+}
+
+
+.cb-chat-box {
+    border: 2px solid #000000;
+    height: 600px;            
+    padding: 25px;            
+    overflow-y: auto;          
+    display: flex;
+    flex-direction: column;
+    gap: 20px;                 
+}
+
+/* 스크롤바 디자인 */
+.cb-chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+.cb-chat-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+
+/* ==========================================
+   3. 말풍선 (정렬 및 스타일)
+   ========================================== */
+
+.cb-msg-row {
+    display: flex;
+    width: 100%;
+}
+
+.bot-row { justify-content: flex-start; }
+.user-row { justify-content: flex-end; }
+
+/* 말풍선 스타일 */
+.cb-bubble {
+    padding: 14px 20px;        
+    border-radius: 18px;       
+    max-width: 80%;        
+    font-size: 1.1rem;         
+    line-height: 1.5;          
+    word-break: break-all;     
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.bot-row .cb-bubble {
+    background-color: #ffffff;
+    color: #000000;
+    border-top-left-radius: 2px; 
+}
+
+.user-row .cb-bubble {
+    background-color: #fee500;
+    color: #191919;
+    border-top-right-radius: 2px;
+}
+
+
+.cb-typing-indicator {
+    display: flex;
+    gap: 6px;
+    padding: 14px 20px;       
+    background: #ffffff;
+    border-radius: 18px;
+    border-top-left-radius: 2px;
+    width: fit-content;
+    align-self: flex-start; 
+}
+
+.cb-typing-indicator span {
+    width: 8px;               
+    height: 8px;
+    background-color: #777;
+    border-radius: 50%;
+    animation: cb-bounce 0.8s infinite ease-in-out;
+}
+
+
+/* ==========================================
+   5. 하단 버튼 영역 & 키워드 칩 (Chips)
+   ========================================== */
+
+.cb-button-container {
+    background-color: #ffffff;
+    padding: 20px;             /* 여백 확대 */
+    border-top: 1px solid #e9e9e9;
+    display: flex;
+    flex-wrap: wrap;          
+    justify-content: center;   
+    gap: 10px;               
+}
+
+/* 선택 버튼들 (Chips) */
+.cb-chip-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #dcdcdc;
+    padding: 10px 20px;       
+    border-radius: 25px;      
+    font-size: 1rem;
+}
+/*  다시하기 버튼  */
+#resetbutton {
+    display: block;          
+    margin: 15px auto 0 auto; 
+    background-color: #4a5568; 
+    color: white;
+    border: none;
+    padding: 10px 20px;      
+    border-radius: 20px;      
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    transition: background 0.2s, transform 0.1s;
+}
+
+#resetbutton:hover {
+    background-color: #2d3748;
+}
+
+#resetbutton:active {
+    transform: scale(0.98);   
+}
+
+
+#startbutton, #resetbutton {
+    display: inline-block;    /* 나란히 배치 */
+    margin: 20px 5px 0 5px;   /* 좌우 여백을 주어 간격 벌림 */
+    color: white;
+    border: none;
+    padding: 12px 24px;        
+    border-radius: 25px;      
+    font-size: 1rem;           
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1); 
+    transition: all 0.2s;
+}
+
+#startbutton {
+    background-color: #3182ce;
+}
+#startbutton:hover {
+    background-color: #2b6cb0;
+}
+
+#resetbutton {
+    background-color: #4a5568; 
+}
+#resetbutton:hover {
+    background-color: #2d3748;
+}
+
+#startbutton:active, #resetbutton:active {
+    transform: scale(0.96);    
+}
+
+
+.chatbotMain {
+    text-align: center; 
+}
+
+
+.cb-result-display {
+    height: 550px;             
+    display: flex;
+    align-items: center;       /* 상하 가운데 정렬 */
+    justify-content: center;   /* 좌우 가운데 정렬 */
+    padding: 30px;
+    text-align: center;
+}
+
+/* 안내 문구 스타일 */
+.cb-notice-text {
+    font-size: 1.1rem;
+    color: #000000;
+    background-color: #ffffff;
+    line-height: 1.6;
+    font-weight: bold;
+
+    border: 1px solid #000000; 
+    border-radius: 12px;
+    padding: 10px 15px;
+}
+
+.cb-main-msg {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+
+.cb-result-box {
+    background-color: #ffffff;
+    padding: 25px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* 카테고리 태그 */
+.cb-tag {
+    display: inline-block;
+    background-color: #3182ce;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.random-tag {
+    background-color: #e53e3e;
+}
+
+
+.cb-final-menu {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+.cb-sub-text {
+    font-size: 0.95rem;
+    color: #718096;
+}
