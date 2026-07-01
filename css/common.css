@@ -85,3 +85,19 @@ footer p:first-child {
     color: #ffffff;
     margin-bottom: 5px;
 }
+
+/* 5. 서브 페이지 공통 타이틀 스타일 */
+.page-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2b2d42;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.page-desc {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 30px;
+    text-align: center;
+}
