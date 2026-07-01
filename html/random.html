@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 메뉴 선택</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/random.css">
+    <script src="../js/random_menu.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>맛집 로드</h1>
+        <input type="text" placeholder="맛집을 검색해 보세요~!">
+        <nav>
+            <a href="main.html">홈</a>
+            <a href="">가이드/매거진</a>
+            <a href="">서비스 소개</a>
+            <a href="random.html">랜덤 메뉴 추천</a>
+            <a href="season.html">제철 식재료</a>
+            <a href="seasoncook.html">제철 식재료 사용 음식</a>
+        </nav>
+    </header>
+    <main>
+  <div class="bgDisplay">      
+    <div class="chatbotMain">
+        <h2>오늘은 뭐먹지? 🤖</h2>
+        
+        <div class="chatBotDisplay">
+            <div id="result-display" class="cb-result-display">
+                <p class="cb-notice-text">아래 버튼을 눌러 오늘 먹을 메뉴 카테고리를 정해보세요!</p>
+            </div>
+
+            <div id="chatting-container" class="cb-button-container">
+                </div>
+        </div>
+        
+        <button type="button" id="startbutton" onclick="initMenuSelector()">▶️ 시작하기</button>
+        <button type="button" id="resetbutton" onclick="resetMenuSelector()">🔄 다시하기</button>
+    </div>
+  </div>   
+</main>    
+</body>
+<footer>
+    <p>(주)맛집 로드</p>
+    <p>copyright ⓒ 2026 FoodLoad</p>
+</footer>
+</html>
