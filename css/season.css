@@ -1,0 +1,123 @@
+img{
+    width: 200px;
+    height: 150px;
+}
+
+/* 1. 상단 타이틀 영역 */
+.season-intro {
+    max-width: 100%; /* 도면 전체 가로폭 기준 */
+    margin: 10px 0 30px 0; /* 상단 여백 20px, 하단 여백 30px */
+    
+    text-align: center; /* 도면 중앙 정렬 */
+}
+.season-intro h2 {
+    font-size: 28px; /* 도면의 Heading 크기 */
+    margin-bottom: 10px;
+    color: #333;
+}
+.season-intro p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 1. 카드들을 감싸는 그리드 영역 */
+.season-grid {
+    display: grid;
+    /* 핵심: 화면 크기에 맞춰 가로 최소 260px ~ 최대 1개의 비율(1fr)까지 카드가 알아서 늘어납니다 */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+    /* 카드 사이의 여백 (원하시는 대로 꽉 차 보이게 유지) */
+    gap: 40px; 
+    
+    max-width: 100%;             /* 전체 화면 가로폭 다 사용 */
+    margin: 0 auto 80px 0;       /* 좌측 정렬 유지 */
+    padding: 0 40px;             /* 양옆에 약간의 숨통만 트여주는 여백 */
+    box-sizing: border-box;
+}
+
+/* 2. 개별 식재료 카드 스타일 */
+.season-card {
+    /* width: 260px; ❌ 고정 가로 크기를 삭제합니다! 그리드가 알아서 키워줍니다. */
+    
+    /* 세로 크기는 유지하되, 내용물이 유동적일 수 있으므로 최소 높이로 지정하는 것이 안전합니다 */
+    min-height: 360px;           
+    
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* 3. 카드 내 이미지 영역 */
+.card-image {
+    width: 100%;                 /* 260px 고정 대신 카드가 늘어나는 대로 100% 채움 */
+    height: 200px;               /* 카드가 커진 만큼 이미지 세로 비율도 시원하게 조절 */
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* 카드가 늘어나도 이미지가 깨지거나 찌그러지지 않음 */
+}
+
+.season-card:hover {
+    transform: translateY(-5px); /* 카드가 살짝 떠오르는 효과 */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);/* 그림자 */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 찌그러지지 않고 비율에 맞게 꽉 차도록 설정 */
+}
+
+/* 5. 카드 내 텍스트 정보 영역 */
+/* 카드 내 텍스트 정보 영역 */
+.card-info {
+    padding: 15px;       
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+/* 1. 식재료 제목 (반응형 글자 크기) */
+.card-info h3 {
+    margin: 0 0 10px 0;
+    color: #222;
+    font-weight: bold;
+    
+    /* 화면과 카드가 커지면 글자도 최대 22px까지 커지고, 작아져도 최소 16px은 유지합니다 */
+    font-size: clamp(16px, 1.2vw + 10px, 22px); 
+}
+
+/* 2. 식재료 본문 설명 (반응형 글자 크기 및 줄바꿈 최적화) */
+.card-info p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+    
+    /* 본문 글자도 최대 15px, 최소 12px 사이에서 유연하게 조절됩니다 */
+    font-size: clamp(12px, 0.8vw + 8px, 15px);
+    
+    /* 한글 단어가 어색하게 짤리지 않고 자연스럽게 줄바꿈되도록 설정 */
+    word-break: keep-all; 
+    
+    /* 카드가 커진 만큼 글을 더 많이 보여줄 수 있도록 말줄임 제한을 5줄로 확장 */
+    display: -webkit-box;
+    
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-link {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: inherit;        /* 본래 지정한 글자 색상 유지 */
+    display: block;        /* 카드 전체 영역을 클릭 가능하게 변경 */
+}

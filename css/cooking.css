@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   1. 메인 타이틀 영역 (drawio: KcYnPjpqk_KOVEP6EXr6-3 구조 반영)
+   ========================================================================== */
+.food-intro {
+    margin-top: 5px;
+    text-align: center;
+    padding: 80px 0 50px 20px;
+    background-color: #ffffff;
+}
+
+/* "제철요리입니다" 메인 타이틀 스타일 */
+.food-intro h2 {
+    font-size: 42px; /* 도면의 대형 폰트 느낌 반영 */
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+/* "부제목과 추가 설명" 서브 타이틀 스타일 */
+.food-intro p {
+    font-size: 20px;
+    color: #666666;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   2. 레시피 리스트 컨테이너
+   ========================================================================== */
+.food-list {
+    max-width: 1200px; /* 도면의 넓은 컨텐츠 폭 기준 중앙 정렬 */
+    margin: 0 auto;
+    padding: 0 20px 120px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px; /* 카드 간의 수직 간격 균등 분배 */
+}
+
+/* ==========================================================================
+   3. 개별 레시피 카드 (drawio 외곽 카드 박스)
+   ========================================================================== */
+.food-card {
+    display: flex; /* 내부 요소인 이미지박스와 레시피박스를 좌우로 배치 */
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px; /* 도면의 arcSize=6 라운드 박스 완벽 구현 */
+    overflow: hidden; /* 왼쪽 이미지가 라운드 모서리를 깨고 나가지 않도록 방지 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* 깔끔하고 은은한 음영 */
+    transition: transform 0.25s ease;
+}
+
+/* 카드 마우스 호버 시 가벼운 상승 반응 */
+.food-card:hover {
+    transform: translateY(-4px);
+}
+
+/* 3-1. 좌측 이미지 박스 영역 (drawio: Image 영역) */
+.card-image-box {
+    flex: 4.5; /* 도면상의 이미지 면적 비율 반영 */
+    min-height: 320px;
+    background-color: #f9fafb;
+}
+
+.card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 왜곡되지 않고 비율에 맞춰 채워짐 */
+    display: block;
+}
+
+/* 3-2. 우측 조리법 텍스트 영역 (drawio: 조리순서 텍스트 박스 영역) */
+.card-recipe-box {
+    flex: 5.5;
+    padding: 45px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 조리 내용 전체를 세로 가운데 정렬 */
+}
+
+/* 요리 제목 (예: 초당 옥수수 콘치즈) */
+.card-recipe-box h2 {
+    font-size: 26px;
+    color: #111827;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+/* "조리 순서" 소제목 고정 */
+.card-recipe-box h3 {
+    font-size: 14px;
+    color: #9ca3af;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    letter-spacing: 0.5px;
+}
+
+/* 3-3. 텍스트 라인 컨테이너 */
+.recipe-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* 문단 간의 명확한 간격 */
+}
+
+/* 실제 입력되는 조리법 설명 구문 */
+.recipe-steps p {
+    font-size: 16px;
+    color: #374151;
+    line-height: 1.65; /* 줄간격을 넓혀 가독성 향상 */
+    margin: 0;
+    word-break: keep-all; /* 한글 단어 단위 줄바꿈 유지 */
+}
+
+/* ==========================================================================
+   4. 모바일 및 태블릿 대응 반응형 브레이크 포인트
+   ========================================================================== */
+@media (max-width: 960px) {
+    .food-card {
+        flex-direction: column; /* 화면이 좁아지면 상단 이미지, 하단 조리법 구조로 전환 */
+    }
+    .card-image-box {
+        flex: none;
+        height: 250px; /* 모바일 환경에 맞는 적정 높이 고정 */
+    }
+    .card-recipe-box {
+        padding: 30px 24px;
+    }
+    .food-intro h2 {
+        font-size: 30px;
+    }
+}
